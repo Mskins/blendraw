@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+
+# Local tooling caches (not part of the addon)
+.codegraph/
+.omo/
+.vscode/
+.idea/
