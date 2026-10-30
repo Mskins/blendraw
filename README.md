@@ -4,6 +4,7 @@ Blender 实时合成器调色插件。把一整套调色模块封装成一个 **
 
 本项目是原 Serpens（可视化节点式插件生成器）版本的**结构化重写**：界面、算子、预设、接线全部是手写 Python，调色算法仍由 `assets/BlendRaw_Node_E.blend` 里的节点组提供（资产内容零改动）。
 
+- 作者：亮锅不服LAO（[qaddons.com](https://qaddons.com/)、[Bilibili](https://space.bilibili.com/429605217)）
 - 版本：`0.3.0`
 - 适用：**Blender 5.0+**
 - 位置：3D 视图 / 合成器节点编辑器 / 图像编辑器的 `BRaw` 面板
@@ -131,8 +132,3 @@ blender --background --factory-startup --python tests/headless_check.py
 - 算子标识符由 `sna.*` 改为 `braw.*`；如果给旧算子手动绑过快捷键，需要重新绑定。
 - 场景属性由 `sna_*` 改为 `braw_*`：旧场景中面板标签页、预设面板开关、示波器开关等 UI 状态会回到默认值。
 - 13 个独立的重置算子合并为一个 `braw.reset_section`。
-
-## 致谢
-
-- 原作者：**亮锅不服LAO**（[qaddons.com](https://qaddons.com/)、[Bilibili](https://space.bilibili.com/429605217)）
-- 调色节点组、图标与中文翻译来自原版
