@@ -132,3 +132,7 @@ blender --background --factory-startup --python tests/headless_check.py
 - 算子标识符由 `sna.*` 改为 `braw.*`；如果给旧算子手动绑过快捷键，需要重新绑定。
 - 场景属性由 `sna_*` 改为 `braw_*`：旧场景中面板标签页、预设面板开关、示波器开关等 UI 状态会回到默认值。
 - 13 个独立的重置算子合并为一个 `braw.reset_section`。
+
+## 致谢
+
+- 感谢 [朔朔的搅拌机日常](https://space.bilibili.com/1220061774) 提供部分调色节点组。
