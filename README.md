@@ -80,36 +80,6 @@ blendraw/
 └─ tests/headless_check.py  # 无头自检
 ```
 
-## 开发
-
-### 添加一个可调分区
-
-1. 在 `core/spec.py` 的 `PALETTE_SECTIONS`（或 `EFFECT_SECTIONS`）里加一条 `Section`：
-
-   ```python
-   Section(
-       "my_section", "My Section", "Q_My Node",          # key / 标题 / BlendRaw 内的组节点名
-       fields=(
-           Field("Strength", "Q_My Node", "Strength", 1),  # 标签 / 组内节点 / 插座名 / 旧索引
-       ),
-   )
-   ```
-
-2. 需要重置默认值就往 `RESETS` 里加一条同名 key。
-3. 面板会自动出现该分区，重置按钮自动可用。
-
-> `Field` 同时记录插座名和历史序号：名字优先，序号兜底。Blender 5.0 把很多节点参数从 RNA 属性改成了插座，序号用于兼容旧节点组。
-
-### 自检
-
-```bash
-blender --background --factory-startup --python tests/headless_check.py
-```
-
-会验证：属性注册、初始化接线、全部分区绑定可解析、重置值写入、色彩空间往返（含开关丢失/手动改动）、文件输出开关、预设存取、清理与注销，以及算子/面板标识符是否都存在。失败时进程退出码为 1，可直接用于发布前检查。
-
----
-
 ## 已知限制
 
 - **Blender 5.2.x 不可用**：该版本在加载本插件节点资产时会原生崩溃（`create_compositor_nodes_rna_for_strip_modifier` → 未捕获的 C++ 异常）。该问题与插件代码无关，空场景直接 `open_mainfile` 加载同一个 `.blend` 即可复现。请使用 **5.0** 或 **5.3+**。
