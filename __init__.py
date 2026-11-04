@@ -11,7 +11,7 @@ bl_info = {
     "author": "亮锅不服LAO",
     "description": "使用 Blender 的实时合成进行快速调色",
     "blender": (5, 0, 0),
-    "version": (0, 3, 0),
+    "version": (0, 3, 1),
     "location": "3D View",
     "warning": "",
     "doc_url": "https://qaddons.com/",
